@@ -70,7 +70,7 @@
         © 2021 Bluedid
         <div class="text-center py-4 align-items-center">
           <a
-            href="https://github.com/markdid/CS260-creative-project"
+            href="https://github.com/markdid/CS260-vue-targets"
             class="btn btn-dark m-1"
             role="button"
             rel="nofollow"
