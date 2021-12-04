@@ -48,6 +48,9 @@
 import axios from "axios";
 export default {
   name: "CreateTarget",
+  props: {
+    getTargets: Function,
+  },
   data: function () {
     return {
       target: "",
@@ -69,6 +72,7 @@ export default {
         this.hoursneeded = 1;
         this.subtarget = "";
         this.subtargets = [];
+        this.getTargets();
       } catch (error) {
         console.log(error);
       }

@@ -3,10 +3,10 @@
     <div class="row">
       <!-- planning -->
       <div class="col-md-6 padding">
-        <TargetList :targets="targets" />
+        <TargetList :targets="targets" :getTargets="getTargets" />
         <br />
         <br />
-        <CreateTarget />
+        <CreateTarget :getTargets="getTargets" />
       </div>
 
       <!-- todos -->

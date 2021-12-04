@@ -43,7 +43,6 @@ app.post('/api/targets', async (req, res) => {
         hoursCompleted: req.body.hoursCompleted,
         subTargets: req.body.subTargets,
     });
-    console.log(req.body)
     try {
         await target.save();
         res.send(target);
@@ -63,6 +62,18 @@ app.get('/api/targets', async (req, res) => {
     }
 });
 
+app.delete('/api/targets/:id', async (req, res) => {
+    try {
+        await Target.deleteOne({
+            _id: req.params.id
+        })
+        res.sendStatus(200);
+    } catch (error) {
+        console.log(error)
+        res.sendStatus(500)
+    }
+});
+
 app.post('/api/todos', async (req, res) => {
 
     let todo = new Todo({
@@ -77,7 +88,6 @@ app.post('/api/todos', async (req, res) => {
         res.sendStatus(500);
     }
 });
-
 
 
 app.get('/api/todos', async (req, res) => {
@@ -119,4 +129,4 @@ app.delete('/api/todos/:id', async (req, res) => {
 
 
 
-app.listen(3000, () => console.log('Server listening on port 3000!'));
+app.listen(3001, () => console.log('Server listening on port 3000!'));
